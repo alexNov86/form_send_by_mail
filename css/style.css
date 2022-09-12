@@ -35,7 +35,26 @@ body {
   outline: none;
 }
 .form__body {
+  position: relative;
 }
+.form__body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(51, 51, 51, 0.9) url(../img/loading.gif) center / 50px no-repeat;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease 0s;
+}
+
+.form__body._sending::after {
+  opacity: 1;
+  visibility: visible;
+}
+
 .form__title {
   font-size: 30px;
   font-weight: 700;
@@ -148,9 +167,9 @@ textarea.form__input {
   padding: 0px 20px;
 }
 .file__preview {
-  display: inline-block;
+  display: block;
   max-width: 100px;
-  padding: 0px 20px;
+  padding: 10px 20px 0px;
 }
 
 .file__preview img {
@@ -158,6 +177,10 @@ textarea.form__input {
 }
 
 .checkbox {
+}
+
+.checkbox._error .checkbox__label::before {
+  box-shadow: 0 0 15px red;
 }
 .checkbox__input {
   display: none;
