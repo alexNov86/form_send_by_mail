@@ -142,8 +142,7 @@ textarea.form__input {
   padding: 0px 20px;
   /* cursor: pointer; */
 }
-.file {
-}
+
 .file__item {
   position: relative;
 }
@@ -174,9 +173,6 @@ textarea.form__input {
 
 .file__preview img {
   max-width: 100%;
-}
-
-.checkbox {
 }
 
 .checkbox._error .checkbox__label::before {
